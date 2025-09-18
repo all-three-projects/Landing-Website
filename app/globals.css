@@ -1,0 +1,330 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Apply Gabarito font to entire website */
+* {
+  font-family: var(--font-gabarito), "gabarito Fallback", sans-serif;
+}
+
+/* Text shadow utilities for better readability over backgrounds */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.font-gabarito {
+  font-family: var(--font-gabarito), "gabarito Fallback", sans-serif;
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-gabarito-regular {
+  font-family: var(--font-gabarito), "gabarito Fallback", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-gabarito-medium {
+  font-family: var(--font-gabarito), "gabarito Fallback", sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  /* Journey Sync Color Scheme */
+  --background: #f9f9f8; /* Soft Off-White - clean, modern, trustworthy background */
+  --foreground: #060606; /* Cod Gray - deep charcoal for primary text */
+  --card: #ffffff; /* White for card backgrounds */
+  --card-foreground: #060606; /* Cod Gray for text on cards */
+  --popover: transparent; /* Transparent for popover backgrounds */
+  --popover-foreground: #060606; /* Cod Gray for popover text */
+  --primary: #42362a; /* Dark Green - trust & transparency */
+  --primary-foreground: #ffffff; /* White for text on primary buttons */
+  --secondary: #1f6f5c; /* Deep Teal/Emerald - CTA conversion focus */
+  --secondary-foreground: #ffffff; /* White for text on secondary buttons */
+  --muted: #bfb0a1; /* Malta - supporting neutral for sections/dividers/cards */
+  --muted-foreground: #645c54; /* Soya Bean - warm grey-brown for subheadings */
+  --accent: #28997b; /* Brighter Teal - CTA hover state */
+  --accent-foreground: #ffffff; /* White for text on accent elements */
+  --destructive: #dc2626; /* Red for error messages */
+  --destructive-foreground: #ffffff; /* White for text on destructive actions */
+  --border: #bfb0a1; /* Malta for borders */
+  --input: #ffffff; /* White for input backgrounds */
+  --ring: rgba(66, 54, 42, 0.5); /* Dark Green for focus rings */
+  --chart-1: #42362a; /* Dark Green for chart elements */
+  --chart-2: #1f6f5c; /* Deep Teal for chart elements */
+  --chart-3: #28997b; /* Brighter Teal for chart elements */
+  --chart-4: transparent; /* Transparent for chart elements */
+  --chart-5: #060606; /* Cod Gray for chart elements */
+  --radius: 0.5rem;
+  --sidebar: transparent; /* Transparent for sidebar background */
+  --sidebar-foreground: #060606; /* Cod Gray for sidebar text */
+  --sidebar-primary: #42362a; /* Dark Green for sidebar primary actions */
+  --sidebar-primary-foreground: #ffffff; /* White for sidebar primary text */
+  --sidebar-accent: #1f6f5c; /* Deep Teal for sidebar accents */
+  --sidebar-accent-foreground: #ffffff; /* White for sidebar accent text */
+  --sidebar-border: #bfb0a1; /* Malta for sidebar borders */
+  --sidebar-ring: rgba(
+    66,
+    54,
+    42,
+    0.5
+  ); /* Dark Green for sidebar focus rings */
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: #1e40af;
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: #1e40af;
+  --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* Updated to attractive fonts: Inter for body and Poppins for headings */
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --font-lobster: var(--font-lobster);
+  --font-oswald: var(--font-oswald);
+  --font-source-sans: var(--font-source-sans);
+  --font-playfair: var(--font-playfair);
+  --font-open-sans: var(--font-open-sans);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Added scrollbar hide utility for smooth horizontal scrolling */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Optimized animations for better performance */
+
+/* Grid and Animation Effects - optimized */
+@keyframes grid-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 24px);
+  }
+}
+
+@keyframes grid-move-reverse {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-32px, -32px);
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+  will-change: transform;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 6s linear infinite;
+  will-change: transform;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 2s ease-in-out;
+  will-change: opacity;
+}
+
+/* Optimize for performance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar - optimized */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #42362a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1f6f5c;
+}
+
+/* Performance optimizations */
+.animate-pulse {
+  will-change: opacity;
+}
+
+/* Bulletproof infinite scroll animation */
+@keyframes scroll-smooth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-smooth {
+  animation: scroll-smooth 20s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Faster animation on larger screens */
+@media (min-width: 1024px) {
+  .animate-scroll-smooth {
+    animation: scroll-smooth 12s linear infinite;
+  }
+}
+
+/* Faster animation on smaller screens */
+@media (max-width: 640px) {
+  .animate-scroll-smooth {
+    animation: scroll-smooth 15s linear infinite;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-scroll {
+    animation: none !important;
+  }
+}
