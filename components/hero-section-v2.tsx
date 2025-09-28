@@ -18,7 +18,6 @@ interface HeroSectionProps {
   secondaryCtaText?: string;
   microcopy?: string;
   compactCard?: boolean;
-  forceTwoLineHeading?: boolean;
 }
 
 export const HeroSection = memo(function HeroSection({
@@ -32,37 +31,10 @@ export const HeroSection = memo(function HeroSection({
   secondaryCtaText,
   microcopy,
   compactCard = false,
-  forceTwoLineHeading = false,
 }: HeroSectionProps) {
   const handlePrimaryCTA = useCallback(() => {
-    if (ctaText === "Request Services") {
-      window.open(
-        "https://deformity.ai/d/LuXmPb4CzESA",
-        "_blank",
-        "noopener,noreferrer"
-      );
-    } else if (ctaText === "Get Loan Assistance") {
-      window.open(
-        "https://deformity.ai/d/IpDxWvaOJSlk",
-        "_blank",
-        "noopener,noreferrer"
-      );
-    } else if (ctaText === "Start Test Prep") {
-      window.open(
-        "https://deformity.ai/d/wME1f8Ry4hpH",
-        "_blank",
-        "noopener,noreferrer"
-      );
-    } else if (ctaText === "Find My Universities") {
-      window.open(
-        "https://deformity.ai/d/IpDxWvaOJSlk",
-        "_blank",
-        "noopener,noreferrer"
-      );
-    } else {
-      window.open(EXTERNAL_LINKS.CTA_PRIMARY, "_blank", "noopener,noreferrer");
-    }
-  }, [ctaText]);
+    window.open(EXTERNAL_LINKS.CTA_PRIMARY, "_blank", "noopener,noreferrer");
+  }, []);
 
   const handleSecondaryCTA = useCallback(() => {
     window.open(EXTERNAL_LINKS.CTA_SECONDARY, "_blank", "noopener,noreferrer");
@@ -93,31 +65,15 @@ export const HeroSection = memo(function HeroSection({
 
         <div className="container px-4 sm:px-4 mx-auto relative z-10 w-full">
           <div className="text-center max-w-4xl mx-auto w-full px-2 sm:px-0 pb-8 sm:pb-0">
-            {forceTwoLineHeading ? (
-              <h1
-                id="hero-title"
-                className="text-5xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-4 sm:mb-4 leading-tight font-gabarito"
-              >
-                <span style={{ whiteSpace: "nowrap" }}>{title}</span>
-                <br />
-                <span
-                  className="text-[#42362A]"
-                  style={{ whiteSpace: "nowrap" }}
-                >
-                  {titleHighlight}
-                </span>
-              </h1>
-            ) : (
-              <h1
-                id="hero-title"
-                className="text-5xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-4 sm:mb-4 leading-tight font-gabarito"
-              >
-                {title}{" "}
-                {titleHighlight && (
-                  <span className="text-[#42362A]">{titleHighlight}</span>
-                )}
-              </h1>
-            )}
+            <h1
+              id="hero-title"
+              className="text-5xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight mb-4 sm:mb-4 leading-tight font-gabarito"
+            >
+              {title}{" "}
+              {titleHighlight && (
+                <span className="text-[#42362A]">{titleHighlight}</span>
+              )}
+            </h1>
 
             <p className="text-base sm:text-base md:text-lg lg:text-xl text-[#060606] mb-6 sm:mb-6 max-w-3xl mx-auto font-medium px-2 sm:px-0 font-gabarito-regular">
               {subtitle}

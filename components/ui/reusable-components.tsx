@@ -41,24 +41,9 @@ export function NavigationButton({
     cta: "px-4 py-2 bg-[#1F6F5C] hover:bg-[#28997B] text-white rounded-sm font-medium transition-colors duration-200 focus:ring-[#1F6F5C]",
   };
 
-  // If button text is 'Get Loan Assistance', override onClick
-  const isLoanButton =
-    typeof children === "string" && children.trim() === "Get Loan Assistance";
-
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (isLoanButton) {
-      window.open("https://deformity.ai/d/IpDxWvaOJSlk", "_blank");
-      e.preventDefault();
-      return;
-    }
-    if (typeof onClick === "function") {
-      onClick();
-    }
-  };
-
   return (
     <button
-      onClick={handleClick}
+      onClick={onClick}
       className={cn(baseClasses, variantClasses[variant], className)}
     >
       {children}

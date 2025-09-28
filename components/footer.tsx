@@ -60,7 +60,7 @@ export const Footer = memo(() => {
       {/* Main Footer Content */}
       <footer
         id="contact"
-        className="bg-[#42362A] text-white py-6 md:py-8"
+        className="bg-[#060606] text-white py-6 md:py-8"
         role="contentinfo"
       >
         <div className="container px-4 mx-auto">
@@ -157,21 +157,21 @@ export const Footer = memo(() => {
                 aria-label="Social media links"
               >
                 <a
-                  href="https://www.instagram.com/journey.sync?igsh=MTNkdXU4NWx4MzdhdQ=="
+                  href="#"
                   className="text-white hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded p-1"
                   aria-label="Follow us on Instagram"
                 >
                   <InstagramIcon className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://youtube.com/@journey_sync?si=WO17LIab6C5oqgRY"
+                  href="#"
                   className="text-white hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded p-1"
                   aria-label="Subscribe to our YouTube channel"
                 >
                   <YoutubeIcon className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/journeysync/"
+                  href="#"
                   className="text-white hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded p-1"
                   aria-label="Connect with us on LinkedIn"
                 >
