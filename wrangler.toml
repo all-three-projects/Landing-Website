@@ -1,0 +1,12 @@
+name = "journeysync"
+main = "./pages/api/[[...route]].ts"
+compatibility_date = "2024-09-29"
+
+[env.production]
+name = "journeysync"
+
+[build]
+command = "pnpm build"
+
+[build.upload]
+format = "modules"
