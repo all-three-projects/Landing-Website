@@ -42,6 +42,7 @@ export default function EducationLoanPage() {
             ctaText={PAGE_CONTENT.educationLoan.ctaText}
             ctaVariant="primary"
             compactCard={true}
+            forceTwoLineHeading={true}
           />
         </Suspense>
       </ErrorBoundary>
