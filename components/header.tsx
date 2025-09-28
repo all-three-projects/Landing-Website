@@ -126,15 +126,12 @@ export const Header = memo(() => {
 
         {/* Contact Us Button - Right */}
         <div className="hidden md:flex items-center">
-          <a
-            href="https://deformity.ai/d/MrhW7ieoP-zP"
-            target="_blank"
-            rel="noopener noreferrer"
+          <NavigationButton
+            onClick={() => handleNavigation("contact")}
+            variant="cta"
           >
-            <NavigationButton variant="cta" onClick={() => {}}>
-              Contact Us
-            </NavigationButton>
-          </a>
+            Contact Us
+          </NavigationButton>
         </div>
 
         {/* Mobile Menu Button */}
@@ -178,21 +175,6 @@ export const Header = memo(() => {
                 </NavigationButton>
               );
             })}
-
-            {/* Contact Us Button for Mobile */}
-            <a
-              href="https://deformity.ai/d/MrhW7ieoP-zP"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <NavigationButton
-                onClick={() => {}}
-                className="block text-left p-2 bg-[#1F6F5C] text-white hover:bg-[#28997B] rounded"
-              >
-                Contact Us
-              </NavigationButton>
-            </a>
           </nav>
         </div>
       )}
