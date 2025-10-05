@@ -157,7 +157,7 @@ export const Footer = memo(() => {
                 aria-label="Social media links"
               >
                 <a
-                  href="https://www.instagram.com/journey.sync?igsh=MTNkdXU4NWx4MzdhdQ=="
+                  href="https://www.instagram.com/journeysync.in?igsh=MTNkdXU4NWx4MzdhdQ%3D%3D&utm_source=qr"
                   className="text-white hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded p-1"
                   aria-label="Follow us on Instagram"
                 >

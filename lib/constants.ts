@@ -51,8 +51,8 @@ export const WORLD_MAP_DOTS = [
 
 // External links
 export const EXTERNAL_LINKS = {
-  CTA_PRIMARY: "https://deformity.ai/d/IpDxWvaOJSlk",
-  CTA_SECONDARY: "https://deformity.ai/d/IpDxWvaOJSlk",
+  CTA_PRIMARY: "https://deformity.ai/d/wME1f8Ry4hpH",
+  CTA_SECONDARY: "https://deformity.ai/d/wME1f8Ry4hpH",
 } as const;
 
 // University logos data

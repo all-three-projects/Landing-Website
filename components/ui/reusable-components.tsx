@@ -47,7 +47,7 @@ export function NavigationButton({
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (isLoanButton) {
-      window.open("https://deformity.ai/d/IpDxWvaOJSlk", "_blank");
+      window.open("https://deformity.ai/d/wME1f8Ry4hpH", "_blank");
       e.preventDefault();
       return;
     }

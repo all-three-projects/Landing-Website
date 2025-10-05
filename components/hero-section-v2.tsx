@@ -35,6 +35,22 @@ export const HeroSection = memo(function HeroSection({
   forceTwoLineHeading = false,
 }: HeroSectionProps) {
   const handlePrimaryCTA = useCallback(() => {
+    console.log("Button clicked with ctaText:", ctaText);
+
+    // EXPLICIT HANDLING FOR FIND MY UNIVERSITIES BUTTON
+    if (
+      ctaText === "Find My Universities" ||
+      ctaText?.includes("Find My Universities")
+    ) {
+      console.log("Opening Find My Universities with CORRECT new link");
+      window.open(
+        "https://deformity.ai/d/wME1f8Ry4hpH",
+        "_blank",
+        "noopener,noreferrer"
+      );
+      return; // Ensure we don't continue to other conditions
+    }
+
     if (ctaText === "Request Services") {
       window.open(
         "https://deformity.ai/d/LuXmPb4CzESA",
@@ -53,13 +69,8 @@ export const HeroSection = memo(function HeroSection({
         "_blank",
         "noopener,noreferrer"
       );
-    } else if (ctaText === "Find My Universities") {
-      window.open(
-        "https://deformity.ai/d/IpDxWvaOJSlk",
-        "_blank",
-        "noopener,noreferrer"
-      );
     } else {
+      console.log("Using fallback link for:", ctaText);
       window.open(EXTERNAL_LINKS.CTA_PRIMARY, "_blank", "noopener,noreferrer");
     }
   }, [ctaText]);
